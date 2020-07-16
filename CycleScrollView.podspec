@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name         = "CycleScrollView"
-  s.version      = "1.0.0"
+  s.version      = "1.0.1"
   s.summary      = "Swift轮播图"
   s.homepage     = "https://github.com/woodtengfei/CycleScrollView"
   s.license      = { :type => "MIT", :file => "LICENSE" }
