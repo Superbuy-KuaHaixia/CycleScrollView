@@ -352,18 +352,6 @@ extension CycleScrollView {
     // MARK: 添加PageControl
     func setupPageControl() {
         
-        if pageControl != nil {
-            pageControl?.removeFromSuperview()
-        }
-        
-        if pageControlStyle == .none {
-            pageControl?.isHidden = true
-        }
-        
-        if imagePaths.count <= 1 {
-            return
-        }
-        
         if pageControlStyle == .system {
             if pageControl == nil {
                 pageControl = UIPageControl()
@@ -373,6 +361,15 @@ extension CycleScrollView {
             pageControl?.currentPageIndicatorTintColor = pageControlCurrentPageColor
             pageControl?.numberOfPages = self.imagePaths.count
             pageControl?.isHidden = false
+        }
+        
+        if imagePaths.count <= 1 {
+            pageControl?.isHidden = true
+            return
+        }
+        
+        if pageControlStyle == .none {
+            pageControl?.isHidden = true
         }
         
         calcScrollViewToScroll(collectionView)
